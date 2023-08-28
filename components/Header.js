@@ -63,7 +63,7 @@ export default function Header() {
                 <Link href={'/'} className='font-semibold text-xl p-3 text-gray-900'>Home</Link>
                 <Link href={'/create'} className='font-semibold text-xl p-3 text-gray-900'>Create</Link>
                 {
-                    userData ?
+                    userData.email ?
                         <div className="flex justify-center items-center flex-row gap-3">
                             <Link href={`/profile/${userData.email}`}>
                                 <img className='w-8 h-8 mx-auto rounded-full' src={userData.photoURL} />
