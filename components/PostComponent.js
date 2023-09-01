@@ -34,8 +34,8 @@ export default function PostComponent({ data, isUser }) {
             </div>
 
             <div className="container my-5">
-                <h1 className="text-sm text-gray-700 font-semibold">Date : {data.date.}</h1>
-                <h1 className="text-sm text-gray-700 font-semibold">Time : {data.time}</h1>
+                <h1 className="text-sm text-gray-700 font-semibold"> {data.date}</h1>
+                <h1 className="text-sm text-gray-700 font-semibold"> {data.time}</h1>
             </div>
 
             <h1 className="text-3xl font-bold text-gray-800 my-4">{data.title}</h1>
