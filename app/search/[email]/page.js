@@ -12,9 +12,9 @@ export default function page() {
   const [data, setData] = useState([]);
   const [userData, setUserData] = useState({});
   const [userFound, setUserFound] = useState(false);
-  const {isLogedIn,setIsLogedIn} = useContext(LoginContext);
+  const { isLogedIn, setIsLogedIn } = useContext(LoginContext);
   const router = useRouter();
-  
+
 
   useEffect(() => {
     getUsersPosts();

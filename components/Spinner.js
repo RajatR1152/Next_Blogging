@@ -1,4 +1,4 @@
-import PulseLoader from "react-spinners/PulseLoader";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const overrides = {
     display: "block",
@@ -11,7 +11,7 @@ export default function Spinner({ size, color }) {
     return (
 
         <div className="sweet-loading w-fit mx-auto text-center">
-            <PulseLoader size={size} color={color} />
+            <BeatLoader size={size} color={color} />
         </div>
     );
 }

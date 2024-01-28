@@ -11,12 +11,18 @@ export default function PostComponent({ data, isUser }) {
     const { count, setCount } = useContext(CountContext);
 
     async function deletePost(id) {
-        const postDoc = doc(db, "posts", id);
-        setCount(count + 1);
-        await deleteDoc(postDoc).then(() => {
-            window.location.reload();
-        })
+
+        if (confirm("confirm to delete") == true) {
+            const postDoc = doc(db, "posts", id);
+            setCount(count + 1);
+            await deleteDoc(postDoc).then(() => {
+                window.location.reload();
+            })
+        } else {
+
+        }
     }
+
 
     return (
         <div className='container w-full my-5 shadow-2xl bg-slate-50 py-10 px-5'>

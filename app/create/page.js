@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import Spinner from '@/components/Spinner';
 import { LoginContext } from '@/context/LoginContext';
 import { useRouter } from 'next/navigation';
+import SideBar from '@/components/SideBar';
 
 export default function page() {
 
@@ -18,7 +19,7 @@ export default function page() {
     const { isLogedIn, setIsLogedIn } = useContext(LoginContext);
     const router = useRouter();
 
-    
+
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -67,6 +68,7 @@ export default function page() {
         time: hours + ":" + minutes + ":" + seconds,
     });
     const collectionRef = collection(db, 'posts');
+    const [showSidebar, setShowSidebar] = useState(true);
 
     function handleFile(e) {
         setFormData({ ...formData, file: e.target.files[0] })
@@ -110,7 +112,8 @@ export default function page() {
     }
 
     return (
-        <div className="conainer flex w-full h-fit md:h-screen p-5">
+        <div className="conainer flex w-full h-fit md:h-screen p-0">
+            {showSidebar ? <SideBar setShow={setShowSidebar} /> : null}
 
             <form className="md:w-10/12 bg-slate-100 mx-auto p-5 flex flex-col md:flex-row">
 
